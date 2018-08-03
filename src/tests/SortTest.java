@@ -15,9 +15,9 @@ public class SortTest {
 	@Test
 	public void generateRandomShouldReturnARandomNumberBetweenZeroAndOneLimit() {
         // assert statements
-        assertEquals(0, sortImplementation.generateRandom(10), "Must return a random integer between 0 and 10");
-        assertEquals(0, sortImplementation.generateRandom(100), "Must return a random integer between 0 and 100");
-        assertEquals(0, sortImplementation.generateRandom(43), "Must return a random integer between 0 and 43");
+		assertTrue("Must return a random integer between 0 and 10", ((10>sortImplementation.generateRandom(10))&&(0<sortImplementation.generateRandom(10))));
+		assertTrue("Must return a random integer between 0 and 100", ((100>sortImplementation.generateRandom(10))&&(0<sortImplementation.generateRandom(10))));
+		assertTrue("Must return a random integer between 0 and 43", ((43>sortImplementation.generateRandom(10))&&(0<sortImplementation.generateRandom(10))));
     }
 	
 	@Test
@@ -33,13 +33,13 @@ public class SortTest {
 		listOriginal.add(10);
 		ArrayList<Integer> listSorted = new ArrayList<Integer>(listOriginal);
 		Collections.sort(listSorted);		
-        assertEquals(listSorted, sortImplementation.sortList(listOriginal), "The sorted list and the one that return the sortList Method have to be equals");
+        assertEquals("The sorted list and the one that return the sortList Method have to be equals",listSorted, sortImplementation.sortList(listOriginal));
     }
 	
 	@Test
 	public void sortListShouldReturnAEmptyListWhenReceivesAEmptyList() {
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		assertEquals(list, sortImplementation.sortList(list), "The sorted list and the one that return the sortList Method have to be equals");
+		assertEquals("Must return an empty list",list, sortImplementation.sortList(list));
 		
 	}
 	
@@ -55,7 +55,7 @@ public class SortTest {
 		listOriginal.add(-10);
 		ArrayList<Integer> listSorted = new ArrayList<Integer>(listOriginal);
 		Collections.sort(listSorted);		
-        assertEquals(listSorted, sortImplementation.sortList(listOriginal), "The sorted list and the one that return the sortList Method have to be equals");
+        assertEquals("The sorted list and the one that return the sortList Method have to be equals",listSorted, sortImplementation.sortList(listOriginal));
 	}
 	
 	
